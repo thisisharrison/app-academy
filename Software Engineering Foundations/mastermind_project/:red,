@@ -1,0 +1,48 @@
+ARGUMENT '=' __ignored__
+
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[?1034h>     "G" => :green,
+[1mError: unexpected '>' in "    "G" =>"
+[0m>     "B" => :blue,
+[1mError: unexpected '>' in "    "B" =>"
+[0m>     "Y" => :yellow
+[1mError: unexpected '>' in "    "Y" =>"
+[0m>   }
+[1mError: unexpected '}' in "  }"
+[0m> 
+>   def self.valid_pegs?(array)
+[1mError: unexpected symbol in "  def self.valid_pegs"
+[0m>     array.all? {|char| Code::POSSIBLE_PEGS.has_keys?(char.upcase)}
+[1mError: unexpected '|' in "    array.all? {|"
+[0m>   end
+function (x, ...) 
+UseMethod("end")
+<bytecode: 0x7fbd55247da8>
+<environment: namespace:stats>
+> 
+>   
+> 
+> end[H[2J> end[1m
+[0m> 
+> scsddweee[K> scsddweee
+[1mError: object 'scsddweee' not found
+[0m> 
+Save workspace image? [y/n/c]: 
