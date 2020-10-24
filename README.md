@@ -19,6 +19,11 @@ The a/A course is split into a few major sections: Ruby, SQL, Rails, JavaScript 
 * [LRU Cache](https://github.com/thisisharrison/app-academy/tree/master/Ruby/08_LRU_Cache)
 
 ### SQL
+* [SQL Fundamentals](https://github.com/thisisharrison/app-academy/tree/master/SQL/00_SQL_fundamentals/sql_zoo)
+* [Object Relational Model](https://github.com/thisisharrison/app-academy/tree/master/SQL/01_Object_Relational_Model)
+* [Active Record I](https://github.com/thisisharrison/app-academy/tree/master/SQL/02_Active_Record)
+* [Active Record II](https://github.com/thisisharrison/app-academy/tree/master/SQL/03_Active_Record_II)
+* [Active Record III](https://github.com/thisisharrison/app-academy/tree/master/SQL/04_Active_Record_under_the_hood)
 
 ### Rails
 
