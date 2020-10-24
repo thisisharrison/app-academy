@@ -3,3 +3,9 @@
 Icon^M^M
 Icon\r\r
 Icon\r
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
