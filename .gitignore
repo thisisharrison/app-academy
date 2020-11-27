@@ -18,5 +18,5 @@ Icon?
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-/config/initializers/secret_token.rb
-/config/master.key
+config/initializers/secret_token.rb
+config/master.key
