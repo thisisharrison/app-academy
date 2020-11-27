@@ -1,0 +1,9 @@
+<h1>All the Subs!</h1>
+
+<ul>
+<% @subs.each do |sub| %>
+    <li>(<%= sub.sum_votes %>) <%= link_to "r/#{sub.title}", sub_url(sub) %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Create New Sub', new_sub_url %>

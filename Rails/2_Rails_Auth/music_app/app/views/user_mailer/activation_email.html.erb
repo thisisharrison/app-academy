@@ -1,0 +1,8 @@
+<h1>Welcome <%= @user.email %></h1>
+
+<p>Click <a href="<%= activate_users_url(activation_token: @user.activation_token) %>">here</a> to activate your account.</p>
+
+<p>If link above doesn't work, copy and paste link below to your browser:</p>
+<%= activate_users_url(activation_token: @user.activation_token) %>
+
+<p>Have a nice day!</p>

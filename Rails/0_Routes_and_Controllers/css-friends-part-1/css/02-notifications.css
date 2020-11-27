@@ -1,0 +1,60 @@
+/* PHASE 2: Notifications */
+
+.badge {
+    display: inline;
+    font-weight: 700;
+    font-size: 14px;
+    background: black;
+    padding: 1px 6px;
+    /* Makes it round */
+    border-radius: 50%;
+}
+
+li:hover .badge {
+    background: #f00;
+}
+
+.header {
+    position: relative;
+    z-index: 1;
+}
+
+.header-list > li {
+    /* Set to Relative for Notifcations to be Absolute */
+    position: relative;
+}
+
+.header-notifications {
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /* Make edges round */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    position: absolute;
+    /* Nudged to line up with nav li lines */
+    left: -1px;
+    font-size: 14px;
+    /* nowrap - suppress text wrapping within source*/
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* Hides Until Hover */
+    display: none;
+}
+
+/* Display reveals when hover over li and the notifications */
+li:hover .header-notifications {
+    display: block;
+}
+
+.header-notifications > li {
+    color: black;
+    border-top: 1px solid #ccc;
+}
+
+.header-notifications > li:hover {
+    background: #eee;
+}

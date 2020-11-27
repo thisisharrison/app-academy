@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GoalSettingApp</title>
+    
+    
+
+    <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-2399b1ae694345e273b17d1f00b2dba405061592546ed68fb84aa197ac124a08.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <header>
+    <h1>GOAL SETTING APP</h1>
+
+      <p>Welcome goal_crud_spec</p>
+      <form action="http://www.example.com/session" method="post">
+        <input type='hidden' name='authenticity_token' value='RS82ogFap44YFhLv+wdzvSQJrmgwQs7vUdKBL8tQuXehEkuc1owIeychkJYdIaUlRqa0cqSDBDuoPn3V+fvAnA=='>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log Out">
+      </form>
+    
+  </header>
+
+  <body>
+    
+<h1>Edit Goal</h1>
+<p>for goal_crud_spec</p>
+
+</ul>
+
+<form action="http://www.example.com/goals/111/edit" method="post">
+    <input type='hidden' name='authenticity_token' value='61pmq0OJ8UKgTCdVO56+pLzdkHtoe+4OEX9cTHk7DOgPZxuVlF9et597pSzduGg83nKKYfy6JNrok6C2S5B1Aw=='>
+    <input type="hidden" name="_method" value="patch">
+
+    <label for="goal_title">Title</label>
+    <br>
+    <input type="text" name="goal[title]" id="goal_title" value="cgcw2l7yfo">
+
+    <br>
+
+    <label for="goal_details">Detail</label>
+    <br>
+    <textarea name="goal[details]" id="goal_details" cols="30" rows="10">k97evm76syqs5ec6u0dv</textarea>
+
+    <br>
+
+    <p>
+        Privacy
+    <br>
+        <label for="goal_private">Private</label>
+        <input type="radio" id="goal_private" name="goal[private]" value="t" >
+        <label for="goal_public">Public</label>
+        <input type="radio" id="goal_public" name="goal[private]" value="f" checked>
+    </p>
+    
+    <p>
+        Complete
+    <br>
+        <label for="goal_complete">Done!</label>
+        <input type="radio" id="goal_complete" name="goal[completed]" value="t" >
+        <label for="goal_not_complete">Still Working On It!</label>
+        <input type="radio" id="goal_not_complete" name="goal[completed]" value="f" checked>
+    </p>
+
+    <input type="submit" value="Update Goal">
+</form>
+  </body>
+</html>

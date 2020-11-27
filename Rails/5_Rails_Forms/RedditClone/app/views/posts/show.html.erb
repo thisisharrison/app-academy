@@ -1,0 +1,50 @@
+<h1><%= @post.title %></h1>
+<p><i>by <%= link_to "@#{@post.author.name}", user_url(@post.author) %></i></p>
+<p><%= @post.content %></p>
+<p><%= @post.sum_votes %> Votes</p>
+    
+<% if @post.author.id == current_user_id %>
+    <%= link_to 'Edit Post', edit_post_url(@post) %>
+<% end %>
+
+<%= render 'shared/vote_button', vote: @vote %>
+
+<h2>Subs</h2>
+<ul>
+<% @post.subs.each do |sub| %>
+    <li><%= link_to "r/#{sub.title}", sub_url(sub) %></li>
+<% end %>
+    <li><%= link_to 'Back to All Subs', subs_url %></li>
+</ul>
+
+<h2>Comments</h2>
+<%= link_to 'Comment on this post', new_post_comment_url(@post) %>
+
+<!-- O(1) Approach -->
+<% all_comments = @post.comments_in_hash %>
+<!-- comments with nil key == parent comment id == nil -->
+<ul>
+<% all_comments[nil].each do |parent| %>
+    <li>
+        <%= render 'comments/comment', comment: parent, all_comments: all_comments %>
+    </li>
+<% end %>
+</ul>
+
+
+
+<!-- O(n^2) Approach -->
+<!--
+<ul>
+<%# top_level_comments = @post.top_level_comments %>
+
+<%# top_level_comments.each do |top_level| %>
+<li>    
+    <%#= render 'comments/comment', 
+        comment: top_level, 
+        top_level_comments: top_level_comments %>
+</li>
+
+<%# end %>
+</ul>
+-->

@@ -1,0 +1,23 @@
+<% header = @user ? "New User" : "Log Back In" %>
+<% action = @user ? users_url : session_url %>
+<% cta = @user ? "Create User" : "Log In" %>
+
+<h1><%= header %></h1>
+
+<%= render 'shared/errors' %>
+<%= render 'shared/notices' %>
+
+<form action="<%= action %>" method="post">
+    <%= auth_token %>
+    <label for="user_email">Email: </label>
+    <input type="text" name="user[email]" id="user_email" value="<%=@user.email unless @user.nil? %>">
+    <br>
+
+    <label for="user_password">Password: </label>
+    <input type="password" name="user[password]" id="user_password" value="<%=@user.password unless @user.nil? %>">
+    <br>
+
+    <input type="submit" value="<%= cta %>">
+    <br>
+
+</form>

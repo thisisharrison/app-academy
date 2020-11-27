@@ -1,0 +1,13 @@
+<% up_action_url = url_for(:action=> 'upvote', :controller=> @vote.votable_type.downcase+'s') %>
+<% down_action_url = url_for(:action=> 'downvote', :controller=> @vote.votable_type.downcase+'s') %>
+
+<br>
+<form action="<%= up_action_url %>" method="post">
+    <%= auth_token %>
+    <input type="submit" value="Upvote">
+</form>
+<form action="<%= down_action_url %>" method="post">
+    <%= auth_token %>
+    <input type="submit" value="Downvote">
+</form>
+<br>

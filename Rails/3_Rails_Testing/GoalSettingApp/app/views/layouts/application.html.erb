@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GoalSettingApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <header>
+    <h1>GOAL SETTING APP</h1>
+    <% if flash[:notices] %>
+      <% flash[:notices].each do |n| %>
+        <p><%= n %></p>
+      <% end %>
+    <% end %>
+
+    <% if logged_in? %>
+      <p>Welcome <%= current_user_username %></p>
+      <p>Cheers Received: <%= current_user.cheers_received.length %></p>
+      <p>Cheers Remaining: <%= current_user.cheer_count %></p>
+      <form action="<%= session_url %>" method="post">
+        <%= auth_token %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log Out">
+      </form>
+    <% else %>
+      <p>
+        <%= link_to 'Sign Up', new_user_url %>
+      </p>
+      <p>or</p>
+      <p>
+        <%= link_to 'Log In', new_session_url %>
+      </p>
+    <% end %>
+    
+  </header>
+
+  <body>
+    <%= yield %>
+  </body>
+
+  <footer>
+    <%= yield :footer %>
+  </footer>
+</html>

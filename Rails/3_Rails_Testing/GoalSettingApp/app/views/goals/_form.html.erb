@@ -1,0 +1,46 @@
+<% header = @goal.persisted? ? "Edit Goal" : "New Goal" %>
+<% action_url = @goal.persisted? ? goal_url(@goal) : goals_url %>
+<% method = @goal.persisted? ? "patch" : "post" %>
+<% cta = @goal.persisted? ? "Update Goal" : "Create Goal" %>
+
+<h1><%= header %></h1>
+<p>for <%= current_user_username %></p>
+
+<%= render 'shared/errors' %>
+
+<form action="<%= action_url %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="<%= method %>">
+
+    <label for="goal_title">Title</label>
+    <br>
+    <input type="text" name="goal[title]" id="goal_title" value="<%= @goal.try(:title) %>">
+
+    <br>
+
+    <label for="goal_details">Detail</label>
+    <br>
+    <textarea name="goal[details]" id="goal_details" cols="30" rows="10"><%= @goal.try(:details) %></textarea>
+
+    <br>
+
+    <p>
+        Privacy
+    <br>
+        <label for="goal_private">Private</label>
+        <input type="radio" id="goal_private" name="goal[private]" value="t" <%= "checked" if @goal.private %>>
+        <label for="goal_public">Public</label>
+        <input type="radio" id="goal_public" name="goal[private]" value="f" <%= "checked" if !@goal.private %>>
+    </p>
+    
+    <p>
+        Complete
+    <br>
+        <label for="goal_complete">Done!</label>
+        <input type="radio" id="goal_complete" name="goal[completed]" value="t" <%= "checked" if @goal.completed %>>
+        <label for="goal_not_complete">Still Working On It!</label>
+        <input type="radio" id="goal_not_complete" name="goal[completed]" value="f" <%= "checked" if !@goal.completed %>>
+    </p>
+
+    <input type="submit" value="<%= cta %>">
+</form>

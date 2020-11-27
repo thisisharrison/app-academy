@@ -1,0 +1,23 @@
+<% if goal.user_id == current_user_id %>
+
+    <form action="<%= complete_goal_url(goal) %>" method="post">
+        <%= auth_token %>
+        <input type="hidden" name="_method" value="patch">
+        <input type="submit" id="<%= "goal_#{goal.id}_complete" %>" 
+                <% if goal.completed %>
+                value = "Undo Complete"
+                <% else %>
+                value = "Complete"
+                <% end %>
+                >
+    </form>
+
+    <br>
+
+    <form action="<%= goal_url(goal) %>" method="post">
+        <%= auth_token %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Goal">
+    </form>
+
+<% end %>

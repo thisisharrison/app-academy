@@ -1,0 +1,12 @@
+<h1><%= @user.name %></h1>
+
+<p>Posts</p>
+<ul>
+    <% @user.posts.each do |post| %>
+    <li><%= link_to post.title, post_url(@post) %></li>
+    <% end %>
+</ul>
+
+<%= content_for :footer do %>
+  <%= link_to 'All Subs', subs_url %>
+<% end %>

@@ -1,0 +1,13 @@
+<ul>
+    <li><%= content.note %></li>
+    <li>Authored by: <%= content.user.email %></li>
+    <% if current_user_id == content.user_id %>
+        <li>
+            <form action="<%= note_url(content) %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <%= auth_token %>
+                <input type="submit" value="Delete Note">
+            </form>
+        </li>
+    <% end %>
+</ul>

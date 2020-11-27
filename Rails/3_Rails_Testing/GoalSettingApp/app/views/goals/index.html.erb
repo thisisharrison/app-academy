@@ -1,0 +1,22 @@
+<%= render 'shared/errors' %>
+<%= render 'shared/notices' %>
+
+<% if @goals %>
+<h1>Your Goals</h1>
+    <ul>
+    <% @goals.each do |g| %>
+        <li><a href="<%= goal_url(g) %>"><%= g.title %></a></li>
+        <ul>
+            <li><%= g.private ? "Private" : "Public" %></li>
+            <li><%= g.completed ? "Complete" : "Ongoing" %></li>
+            <br>
+            <%= render 'shared/goals_buttons', goal: g %>
+        </ul>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= content_for :footer do %>
+  <%= link_to 'Back to All Users', users_url %>
+  <%= link_to 'Back to Goals', goals_url %>
+<% end %>

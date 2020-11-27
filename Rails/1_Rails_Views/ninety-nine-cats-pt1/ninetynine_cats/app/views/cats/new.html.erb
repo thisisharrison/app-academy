@@ -1,0 +1,39 @@
+<%= render 'shared/errors' %>
+<%= render 'form', cat: @cat %>
+
+<!--# <form action="/cats" method = "POST"> -->
+<!--
+<form action="<%#= cats_url %>" method = "POST">
+    <label for="name">Name:</label>
+    <input type="text" name="cat[name]" id="name">
+
+    <br>
+
+    <p>Sex: </p>
+    <input type="radio" name="cat[sex]" id="cat_male" value = 'M'><label for="cat_male">Male</label>
+    <input type="radio" name="cat[sex]" id="cat_female" value = 'F'><label for="cat_female">Female</label>
+    
+    <br><br>
+
+    <label for="color">Color: </label>
+    <select name="cat[color]" id="color">
+        <option disabled selected>--Select Color--</option>
+        <% Cat::CAT_COLORS.each do |color| %>
+            <option value="<%#= color %>"><%#= color.capitalize %></option>
+        <% end %>
+    </select>
+
+    <br><br>
+
+    <label for="birth_date">Birth Date: </label>
+    <input type="date" id="birth_date" name="cat[birth_date]">
+
+    <br>
+
+    <label for="description">Description: </label>
+    <br>
+    <textarea name="cat[description]" id="description" cols="30" rows="10"></textarea>
+
+    <input type="submit" value="Submit">
+</form>
+-->

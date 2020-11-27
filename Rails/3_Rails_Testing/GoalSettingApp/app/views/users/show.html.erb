@@ -1,0 +1,35 @@
+<h1><%= @user.username %>'s Goals</h1>
+
+<%= render 'shared/errors' %>
+
+<% if @user.goals %>
+<ul>
+    <% @user.goals.each do |g| %>
+        <li><a href="<%= goal_url(g) %>"><%= g.title %></a></li>
+        <ul>
+            <li><%= g.private ? "Private" : "Public" %></li>
+            <li><%= g.completed ? "Complete" : "Ongoing" %></li>
+            <%= render 'shared/goals_buttons', goal: g %>
+        </ul>
+    <% end %>
+</ul>
+<% end %>
+
+<br>
+
+<%= render 'shared/comments', comments: @user.comments %>
+
+<br>
+
+<%= render 'shared/comment_form', commentable_type: 'User', commentable_id: @user.id %>
+
+<br>
+
+<% if current_user_id == @user.id %>
+    <%= link_to 'New Goal', new_goal_url %>
+<% end %>
+
+<%= content_for :footer do %>
+  <%= link_to 'Back to All Users', users_url %>
+  <%= link_to 'Back to Goals', goals_url %>
+<% end %>

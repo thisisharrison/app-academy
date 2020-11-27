@@ -1,0 +1,9 @@
+<% if comments %>
+<h1>Comments</h1>
+    <ul>
+    <% comments.each do |c| %>
+        <li><%= c.body %></li>
+        <li><i>by <%= c.author.username %></i></li>
+    <% end %>
+    </ul>
+<% end %>

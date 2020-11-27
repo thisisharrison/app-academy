@@ -1,0 +1,31 @@
+<h1><%= @sub.title %></h1>
+
+<p><%= @sub.sum_votes %> Votes</p>
+
+<br>
+
+<p><b>Description</b></p>
+<p><%= @sub.description %></p>
+
+<br>
+
+<% if current_user_id == @sub.moderator_id %>
+    <%= link_to 'Edit Sub', edit_sub_url(@sub) %>    
+<% end %>
+
+<%= render 'shared/vote_button', vote: @vote %>
+
+<h1>Posts</h1>
+<%= link_to 'Post on this Sub', new_post_url %>
+<ul>
+    <% @sub.posts.each do |post| %>
+    <li>(<%= post.sum_votes %>) <%= link_to post.title, post_url(post) %></li>
+    
+    <% end %>
+    
+</ul>
+
+<%= content_for :footer do %>
+    <p>RedditClone</p>
+    <%= link_to 'All Subs', subs_url %>
+<% end %>

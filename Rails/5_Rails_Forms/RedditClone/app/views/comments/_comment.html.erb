@@ -1,0 +1,23 @@
+<!-- O(1) approach -->
+<p>(<%= comment.sum_votes %>) <%= link_to comment.content, comment_url(comment) %> <small>by <a href=<%= user_url(comment.author) %>><%= "@#{comment.author.name}" %></a> created at <%= comment.created_at %></small></p>
+
+<ul>
+    <!-- it calls the hash for next parent comment id key -->
+    <% all_comments[comment.id].each do |comment| %>
+    <li>
+        <%= render 'comments/comment', comment: comment, all_comments: all_comments %>
+    </li>
+    <% end %>
+</ul>
+
+<!-- O(n^2) approach -->
+<!--
+<ul>
+<%# comment.child_comments.each do |child| %>
+<li>
+<%#= render 'comments/comment', comment: child, top_level_comments: top_level_comments %>
+</li>
+<%# end %>
+</ul>
+-->
+

@@ -1,0 +1,58 @@
+<%= render 'form', cat: @cat %>
+<!-- Do not use instance variable in partial because it promotes coupling -->
+
+
+<!--
+<h1>Edit <%#= @cat.name %></h1>
+-->
+<!-- <form action="cats/:id" method = "POST"> -->
+<!--
+<form action="<%#= cat_url(@cat) %>" method = "POST">
+    <input type="hidden" name="_method" value="PATCH">
+
+    <label for="name">Name:</label>
+    <input type="text" name="cat[name]" id="name" value=<%#= @cat.name %>>
+
+    <br>
+
+    <p>Sex: </p>
+    <input type="radio" name="cat[sex]" id="cat_male" value = 'M'
+    <%#= (@cat.sex == 'M') ? 'checked' : '' %>
+    >
+    <label for="cat_male">Male</label>
+
+    <input type="radio" name="cat[sex]" id="cat_female" value = 'F'
+    <%#= (@cat.sex == 'F') ? 'checked' : '' %>
+    >
+    <label for="cat_female">Female</label>
+    
+    <br><br>
+
+    <label for="color">Color: </label>
+    <select name="cat[color]" id="color">
+        <option disabled selected>--Select Color--</option>
+        <% Cat::CAT_COLORS.each do |color| %>
+            <% if @cat.color == color %>
+                <option value="<%#= color %>" selected><%#= color.capitalize %></option>
+            <% else %>
+                <option value="<%#= color %>"><%#= color.capitalize %></option>
+            <% end %>
+        <% end %>
+    </select>
+
+    <br><br>
+
+    <label for="birth_date">Birth Date: </label>
+    <input type="date" id="birth_date" name="cat[birth_date]" value=<%#= @cat.birth_date %>>
+
+    <br>
+
+    <label for="description">Description: </label>
+    <br>
+    <textarea name="cat[description]" id="description" cols="30" rows="10">
+        <%#= @cat.description %>
+    </textarea>
+        
+    <input type="submit" value="Edit">
+</form>
+-->

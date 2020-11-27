@@ -1,0 +1,35 @@
+/* PHASE 3: Layout */
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+
+    margin: 0 auto;
+    width: 900px;
+    border: 1px solid #ccc;
+    border-top: 0; 
+}
+/* Full width = 200 + 20*2 */
+.content-sidebar {
+    min-height: 200px;
+    width: 200px; 
+    background: blue;
+    
+    /* Sets all the padding 20px */
+    padding: 20px;
+    /* Reset Padding Right to 19 to fit the border-right */
+    padding-right: 19px;
+    /* Give a gap between items */
+    border-right: 1px solid #ccc;
+}
+/* Full width = 620 + 20*2 */
+.content-main {
+    min-height: 200px;
+    /* 900 - 200 - 19 - 1 - 20 */
+    width: 620px; 
+    background: orange;
+
+    padding: 20px;
+}
+

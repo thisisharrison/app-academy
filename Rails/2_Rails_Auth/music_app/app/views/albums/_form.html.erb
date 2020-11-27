@@ -1,0 +1,56 @@
+<% header = album.persisted? ?  "Edit #{album.name}" : "New Album" %>
+<% action = album.persisted? ? album_url(album) : albums_url %>
+<% http_method = album.persisted? ? "PATCH" : "POST" %>
+<% cta = album.persisted? ? "Edit Album" : "Create Album" %>
+
+<h1><%= header %></h1>
+
+<%= render 'shared/errors' %>
+
+<form action="<%= action %>" method="post">
+    <input type="hidden" name="_method" value="<%= http_method %>">
+    
+    <%= auth_token %>
+    
+    <p>
+        <label for="album_band">Band: </label>
+        <select name="album[band_id]" id="album_band">
+                <option disabled>--SELECT THE BAND --</option>
+            <% Band.all.each do |band| %>
+                <option 
+                    value="<%= band.id %>"
+                    <%= "selected" if album.band_id == band.id %>>
+                    <%= band.name %>
+                </option>
+            <% end %>
+        </select>
+    </p>
+
+    <br>
+
+    <p>
+        <label for="album_title">Title: </label>
+        <input type="text" name="album[title]" id="album_title" value="<%= album.title unless @album.nil? %>">
+    </p>
+
+    <br>
+
+    <p>
+        Recorded:
+        <label for="album_live">Live</label>
+        <input type="radio" name="album[live]" value="true" id="album_live" <%= "checked" if album.live %>>
+        <label for="album_studio">Studio</label>
+        <input type="radio" name="album[live]" value="false" id="album_studio" <%= "checked" if !album.live %>>
+    </p>
+
+    <br>
+
+    <p>
+        <label for="album_year">Year:</label>
+        <input type="number" name="album[year]" id="album_year" value="<%= album.year %>">
+    </p>
+        
+    <input type="submit" value="<%= cta %>">
+
+
+</form>

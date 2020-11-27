@@ -1,0 +1,27 @@
+<h1>All the Bands</h1>
+<ul>
+    <% if @bands %>
+        <% @bands.each do |band| %>
+            <li><a href="<%= band_url(band) %>"><%= band.name %></a>
+                <ul>
+                    <li>
+                        <a href="<%= edit_band_url(band) %>">
+                            Edit Band
+                        </a>
+                    </li>
+                    <li>
+                        <form action="band_url" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <%= auth_token %>
+                            <input type="submit" value="Delete Band">
+                        </form>
+                    </li>
+                    </ul>
+            </li>
+        <% end %>
+    <% else %>
+        <li>No bands yet</li>
+    <% end %>
+</ul>
+
+<%= link_to 'Add New Band', new_band_url %>

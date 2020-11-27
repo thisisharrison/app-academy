@@ -1,0 +1,91 @@
+// Grid layout
+.main-content {
+    display: grid;
+    grid-template-columns: 66.66% 1fr;
+    margin-top: 10px;
+
+    header {
+        font-weight: bold;
+    }
+}
+
+.main-story {
+    display: grid;
+    grid-template-columns: 33.33% 1fr;
+    padding-right: 20px;
+    margin-top: 10px;
+
+    .col-1-3 {
+        padding-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style: initial;
+        padding-left: 15px;
+
+        li {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+    }
+}
+
+.comments {
+    font-family: $sans-serif;
+	font-size: 10px;
+	vertical-align: bottom;
+}
+
+iframe {
+    margin-bottom: 10px;
+}
+
+.kicker {
+    text-transform: uppercase;
+	font-size: 10px;
+}
+
+.opinion {
+    display: grid;
+    margin-top: 10px;
+    padding-right: 20px;
+
+    // grid-template-rows: 5% 1fr 60%;
+    // grid-template-columns: repeat(2, 50%);
+    grid-template: 5% 1fr 60% / repeat(2, 50%);
+
+    .col-1-2:first-child {
+        padding-right: 20px;
+    }
+    a:first-child {
+        // span from 1 to 3
+        grid-column: 1 / 3;
+    }
+    .opinion-sign-up {
+        grid-column: 1 / 3;
+
+        center {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.opinions-list {
+    list-style: initial;
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 10px;
+
+    li {
+        margin: 5px 0;
+    }
+}
+
+
+@media all and (max-width: 1000px) {
+    .main-content, .main-story, .opinion {
+        display: block;
+        width: 100%;
+    }
+}

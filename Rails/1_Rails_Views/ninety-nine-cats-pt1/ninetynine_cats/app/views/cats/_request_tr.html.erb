@@ -1,0 +1,13 @@
+<tr>
+    <td><%= rental.start_date %></td>
+    <td><%= rental.end_date %></td>
+    <td><%= rental.status %></td>
+
+    <% if rental.pending? %>
+        <td>
+            <%= button_to 'Approve', approve_cat_rental_request_url(rental), method: :post %>
+            <%= button_to 'Deny', deny_cat_rental_request_url(rental), method: :post %>
+        </td>
+    <% end %>
+    
+</tr>

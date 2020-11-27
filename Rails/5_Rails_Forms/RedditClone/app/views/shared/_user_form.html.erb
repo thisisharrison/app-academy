@@ -1,0 +1,15 @@
+<% action_url = type == :new_account ? users_url : session_url %>
+<% cta_button = type == :new_account ? "Create Account" : "Log In" %>
+
+<form action="<%= action_url%>" method="post">
+    <%= auth_token %>
+    <label for="name">Name</label>
+    <br>
+    <input type="text" name="user[name]" id="name" value="<%= @user.try(:name) %>">
+    <br>
+    <label for="password">Password</label>
+    <br>
+    <input type="password" name="user[password]" id="password">
+    <br>
+    <input type="submit" value="<%= cta_button %>">
+</form>

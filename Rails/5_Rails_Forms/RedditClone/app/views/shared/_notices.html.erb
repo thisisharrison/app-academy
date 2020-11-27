@@ -1,0 +1,7 @@
+<% if flash[:notices] %>
+    <ul>
+        <% flash[:notices].each do |n| %>
+            <li><%= n %></li>
+        <% end %>
+    </ul>
+<% end %>

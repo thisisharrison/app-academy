@@ -1,0 +1,17 @@
+<% action_url = type == :newuser ? users_url : session_url %>
+<% header = type == :newuser ? "Sign Up" : "Sign In" %>
+<% cta = type == :newuser ? "Sign Up" : "Log In" %>
+
+<h1><%= header %></h1>
+
+<form action="<%= action_url %>" method="post">
+    <%= auth_token %>
+    <label for="username">Username</label>
+    <input type="text" name="user[username]" id="username" value="<%= @user.try(:username) %>">
+
+    <label for="password">Password</label>
+    <input type="password" name="user[password]" id="password" value="<%= @user.try(:password) %>">
+
+    <input type="submit" value="<%= cta %>">
+
+</form>

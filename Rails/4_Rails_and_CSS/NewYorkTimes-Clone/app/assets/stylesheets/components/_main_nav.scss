@@ -1,0 +1,74 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+	border-bottom: 1px solid $light-gray;
+}
+
+// keep the li children horizontally aligned with flex
+// vertically align with center
+.left-nav > ul,
+.right-nav > ul {
+  display: flex;
+  align-items: center;
+}
+
+.left-nav {
+
+  > ul {
+    > li {
+      font-family: $sans-serif;
+      font-weight: bold;
+      font-size: 11px;
+      text-transform: uppercase;
+      
+      padding: 7px 9px;
+      margin-left: 20px;
+      cursor: pointer;
+      transition: background-color 0.5s;
+    }
+  }
+
+  span {
+    margin: 10px;
+  }
+}
+
+.right-nav  {
+
+  > ul {
+
+    > li {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    > li:last-of-type {
+      position: relative;
+      transition: background-color 0.5s;
+    }
+  }
+  
+  i {
+    font-size: 16px;
+  }
+}
+
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+  background-color: $lightest-gray;
+}
+
+@media all and (max-width: 1000px) {
+    .right-nav {
+      button {
+        display: none;
+      }
+    }
+    .left-nav > ul > li {
+      margin: 0;
+    }
+    .main-nav {
+      padding: 20px 0;
+    }
+}

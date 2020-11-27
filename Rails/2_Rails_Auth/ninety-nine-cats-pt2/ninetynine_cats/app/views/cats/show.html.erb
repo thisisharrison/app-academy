@@ -1,0 +1,36 @@
+<h1><%= @cat.name %></h1>
+
+<table>
+  <tr>
+    <th>Attribute</th>
+    <th>Value</th>
+  </tr>
+  <% [:age, :birth_date, :color, :sex].each do |attr_name| %>
+    <tr>
+      <td><%= attr_name %></td>
+      <td><%= @cat.send(attr_name) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td>Owner</td>
+    <td><%= @cat.owner.user_name %></td>
+  </tr>
+</table>
+
+<% if current_user.owns_cat?(@cat) %>
+  <a href="<%= edit_cat_url(@cat) %>">Edit <%= @cat.name %></a>
+<% end %>
+
+<h2>Rental Requests</h2>
+<table>
+  <tr>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Requester</th>
+    <th>Status</th>
+  </tr>
+  <!-- includes(:requester) to save +1 query of requester -->
+  <% @cat.rental_requests.includes(:requester).order('start_date').each do |req| %>
+    <%= render 'req_tr', req: req %>
+  <% end %>
+</table>

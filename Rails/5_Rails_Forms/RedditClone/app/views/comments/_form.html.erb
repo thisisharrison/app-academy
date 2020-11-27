@@ -1,0 +1,17 @@
+<form action="<%= comments_url %>" method="post">
+    <%= auth_token %>
+    <!-- with Comment#ensure_post_id! comment.post_id now works for new_comment to respond to parent comment -->
+    <input type="hidden" name="comment[post_id]" value="<%= comment.post_id %>">
+    <input type="hidden" name="comment[parent_comment_id]" value="<%= comment.parent_comment_id %>">
+
+    <label for="comment_content">Your Comment</label>
+    <br>
+    <textarea name="comment[content]" id="comment_content" cols="30" rows="10"><%= comment.content %></textarea>
+    <br>
+
+    <input type="submit" value="Comment">
+</form>
+
+<%= content_for :footer do %>
+  <%= link_to 'Back to Post', post_url(comment.post_id) %>
+<% end %>

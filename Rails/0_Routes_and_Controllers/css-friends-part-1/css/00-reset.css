@@ -1,0 +1,50 @@
+/* PHASE 0: Reset */
+
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+aside, section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    /* Content-Box by default */
+    box-sizing: inherit;
+    background: transparent;
+    font: inherit;
+    color: inherit;
+    text-decoration: inherit;
+    text-align: inherit;
+    /* sets the vertical alignment of inline, inline-block, table-cell box */
+    vertical-align: inherit;
+}
+
+ul {
+    /* Removes bullet from list */
+    list-style: none;
+}
+
+img {
+    /* Images height proportional to container */
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+    /* Removes native styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button,
+input[type="submit"] {
+    /* Shows the hand pointers */
+    cursor: pointer;
+}

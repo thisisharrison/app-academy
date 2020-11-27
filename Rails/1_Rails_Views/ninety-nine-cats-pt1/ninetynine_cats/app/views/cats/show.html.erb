@@ -1,0 +1,42 @@
+<h1><%= @cat.name %></h1>
+
+<table>
+    <thead>
+        <th>Sex</th>
+        <th>Color</th>
+        <th>Birth Date</th>
+        <th>Age</th>
+        <th>Description</th>
+    </thead>
+    <tr>
+        <td><%= @cat.sex %></td>
+        <td><%= @cat.color %></td>
+        <td><%= @cat.birth_date %></td>
+        <td><%= @cat.age %></td>
+        <td><%= @cat.description %></td>
+    </tr>
+</table>
+
+
+<h1>Bookings</h1>
+
+<% if @cat.cat_rental_requests.exists? %>
+<table>
+    <thead>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Status</th>
+        <th>Action</th>
+    </thead>
+    <!-- @cat.cat_rental_requests returns ApplicationRecord so we can use #order like SQL -->
+    
+    <% rentals = @cat.cat_rental_requests.order('start_date DESC') %>
+
+    <% rentals.each do |rental| %>
+        <%= render 'request_tr', rental: rental %>
+    <% end %>
+
+</table>
+<% else %>
+<p>No booking records</p>
+<% end %>

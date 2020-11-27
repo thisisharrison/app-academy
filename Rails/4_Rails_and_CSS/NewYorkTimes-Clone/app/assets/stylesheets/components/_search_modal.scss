@@ -1,0 +1,73 @@
+.search-modal.expand {
+    max-height: 300px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.06);
+	border-bottom: 1px solid $light-gray;
+    border-top: 1px solid $light-gray;
+}
+.search-modal {
+    position: relative;
+    // Collapses - Transition with max-height
+    max-height: 0;
+    // fills the whole viewport
+    width: 100vw;
+    left: calc(-50vw + 50%);
+
+    overflow: hidden;
+	text-align: center;
+	z-index: 1;
+	transition: max-height 500ms;
+    margin-top: -1px;
+    
+    .input-wrapper {
+        max-width: 40%;
+		min-width: 300px;
+		margin: 25px auto;
+        
+        button {
+        margin-left: 10px;
+        background: white;
+        font-weight: normal;
+        color: $gray;
+        border: 1px solid $light-gray;
+        border-radius: 3px;
+        }
+    }
+
+    input {
+        border: 1px solid $light-gray;
+        // inset shadows changes to oneside of the frame
+        // makes it look depressed inside a box
+        box-shadow: inset 2px 3px 3px rgba(0,0,0,0.07);
+        border-radius: 3px;
+    }
+}
+
+button.close{
+    border-radius: 50%;
+    background: $light-gray;
+    padding: 3px 5px;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+	transition: background 0.5s;
+}
+
+button.close:hover {
+    background: $gray;
+}
+
+.main-content {
+    position: relative;
+}
+
+// Modal
+.overlay {
+    position: absolute;
+    // Sets the main background to 'dim'
+    background: rgba(255, 255, 255, 0.8);
+    top: 0;
+	bottom: 0;
+	width: 100vw;
+	left: calc(-50vw + 50%);
+}

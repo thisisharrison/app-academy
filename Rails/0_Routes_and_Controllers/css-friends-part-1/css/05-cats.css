@@ -1,0 +1,47 @@
+/* PHASE 5: Cats */
+
+.content-header {
+    height: 200px;
+    width: 100%;
+    background: url("../images/cats.jpg");
+    /* Stretch image as big as possible */
+    background-size: cover;
+
+    /* For header and button to position absolute */
+    position: relative;
+    /* Gap space */
+    border-bottom: 1px solid #ccc;
+}
+
+.content-header > h1 {
+    font-size: 36px;
+    /* Lines spacing */
+    line-height: 1;
+    font-weight: 300;
+    color: #fff;
+    /* color | offset-x | offset-y | blur-radius */
+    text-shadow: #000 0 0 10px;
+
+    position: absolute;
+    /* Sidebar is 240px */
+    left: 240px;
+    bottom: 20px;
+}
+
+.content-header-add-friend {
+    color: #000;
+    background: #fff;
+    font-weight: bold;
+
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.content-header-add-friend:hover {
+    background: #eee;
+}

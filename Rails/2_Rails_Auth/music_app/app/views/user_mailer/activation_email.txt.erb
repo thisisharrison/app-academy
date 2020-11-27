@@ -1,0 +1,6 @@
+Welcome <%= @user.email %>
+
+Copy and paste link below to your browser to activate your account:
+<%= activate_users_url(activation_token: @user.activation_token) %>
+
+Have a nice day!

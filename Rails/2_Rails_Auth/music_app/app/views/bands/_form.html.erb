@@ -1,0 +1,22 @@
+<% header = band.persisted? ?  "Edit #{band.name}" : "New Band" %>
+<% action = band.persisted? ? band_url(band) : bands_url %>
+<% http_method = band.persisted? ? "PATCH" : "POST" %>
+<% cta = band.persisted? ? "Edit a Band" : "Create a Band" %>
+
+<h1><%= header %></h1>
+
+<%= render 'shared/errors' %>
+
+<form action="<%= action %>" method="post">
+    <input type="hidden" name="_method" value="<%= http_method %>">
+    
+    <%= auth_token %>
+    
+    <label for="band_name">Name: </label>
+    <input type="text" name="band[name]" id="band_name" value="<%= band.name unless @band.nil? %>">
+    <br>
+
+    <input type="submit" value="<%= cta %>">
+    <br>
+
+</form>

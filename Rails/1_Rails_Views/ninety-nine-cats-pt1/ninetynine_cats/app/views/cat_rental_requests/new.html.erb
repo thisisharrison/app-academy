@@ -1,0 +1,33 @@
+<%= render 'shared/errors' %>
+
+<h1>Rent a Cat</h1>
+
+<form action="<%= cat_rental_requests_url %>" method="POST">
+    <label for="cat">Select Cat</label>
+    <select name="cat_rental_request[cat_id]" id="cat">
+            <option disabled selected>--Select Cat--</option>
+        <% Cat.all.each do |cat| %>
+            <!-- sets selected to true or false -->
+            <% selected = @rental.cat_id == cat.id %>
+            <option value="<%= cat.id %>" <%= selected ? "selected" : "" %>>
+                <%= cat.name.capitalize %>
+            </option>
+        <% end %>
+    </select>
+
+    <br>
+
+    <label for="start_date">Start Date</label>
+    <br>
+    <input type="date" id="start_date" name="cat_rental_request[start_date]" value=<%= @rental.start_date %>>
+    
+    <br><br>
+
+    <label for="end_date">End Date</label>
+    <br>
+    <input type="date" id="end_date" name="cat_rental_request[end_date]" value=<%= @rental.end_date %>>
+
+    <br>
+
+    <input type="submit" value="Submit">
+</form>

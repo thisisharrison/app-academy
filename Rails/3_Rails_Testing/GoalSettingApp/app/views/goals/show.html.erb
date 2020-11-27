@@ -1,0 +1,48 @@
+<h1>Title: <%= @goal.title %></h1>
+<p><i>by <a href="<%= user_url(@goal.author) %>"><%= @goal.author.username %></a></i></p>
+
+<%= render 'shared/errors' %>
+
+<table>
+    <tr>
+        <th>Details</th>
+        <td><%= @goal.details %></td>
+    </tr>
+    <tr>
+        <th>Visibility</th>
+        <td><%= @goal.private ? "Private" : "Public" %></td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td><%= @goal.completed ? "Complete" : "Ongoing"%></td>
+    </tr>
+    <tr>
+        <th>Cheers</th>
+        <td><%= @goal.cheers.length %></td>
+        
+    </tr>
+    
+    <% if @goal.user_id != current_user_id %>
+        <%= render 'shared/cheer_button', goal: @goal %>
+    <% end %>
+    
+</table>
+
+<br>
+
+<%= render 'shared/goals_buttons', goal: @goal %>
+
+<br>
+
+<%= render 'shared/comments', comments: @goal.comments %>
+
+<br>
+
+<%= render 'shared/comment_form', commentable_type: 'Goal', commentable_id: @goal.id %>
+
+<br>
+
+<%= content_for :footer do %>
+  <%= link_to 'Back to All Users', users_url %>
+  <%= link_to 'Back to Goals', goals_url %>
+<% end %>

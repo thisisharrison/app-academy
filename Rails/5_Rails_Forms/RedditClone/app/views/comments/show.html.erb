@@ -1,0 +1,6 @@
+<p><%= @comment.content %></p>
+<p><i>by <%= link_to "@#{@comment.author.name}", user_url(@comment.author) %></i></p>
+<%= render 'shared/vote_button', vote: @vote %>
+<br>
+<h2>Reply to this Comment:</h2>
+<%= render 'form', comment: @new_comment %>
