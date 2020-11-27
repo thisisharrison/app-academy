@@ -26,6 +26,13 @@ The a/A course is split into a few major sections: Ruby, SQL, Rails, JavaScript 
 * [Active Record III](https://github.com/thisisharrison/app-academy/tree/master/SQL/04_Active_Record_under_the_hood)
 
 ### Rails
+* [Routes & Controllers](https://github.com/thisisharrison/app-academy/tree/master/Rails/0_Routes_and_Controllers)
+* [Views](https://github.com/thisisharrison/app-academy/tree/master/Rails/1_Rails_Views/ninety-nine-cats-pt1/ninetynine_cats)
+* [Auth](https://github.com/thisisharrison/app-academy/tree/master/Rails/2_Rails_Auth)
+* [Testing](https://github.com/thisisharrison/app-academy/tree/master/Rails/3_Rails_Testing/GoalSettingApp)
+* [CSS](https://github.com/thisisharrison/app-academy/tree/master/Rails/4_Rails_and_CSS)
+* [Rails Forms](https://github.com/thisisharrison/app-academy/tree/master/Rails/5_Rails_Forms)
+* [Rails Lite](https://github.com/thisisharrison/app-academy/tree/master/Rails/6_Rails_Lite/RailsLite)
 
 ### JavaScript
 
