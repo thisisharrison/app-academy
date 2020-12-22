@@ -1,0 +1,75 @@
+html, body, h1, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: inherit;
+    font: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 60px;
+    margin: 30px auto;
+}
+
+.hanoi {
+    display: flex;
+    margin: 30px auto;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+ul {
+    width: 100%;
+    margin-right: 10px;
+    padding: 0 0 10px 0;
+    border-bottom: 10px solid darkgrey;
+    cursor: pointer;
+}
+
+ul:last-child {
+    margin-right: 0px;
+}
+
+li {
+    /* default 0, js will add the width */
+    width: 0px;
+    margin: 10px auto;
+    height: 50px;
+    background: gray;
+    border-radius: 25px;
+}
+
+ul.selected {
+    border-color: blue;
+}
+
+ul:hover {
+    border-color: red;
+}
+
+.game-over ul {
+    cursor: default;
+    border-color: black;
+}
+
+.game-over li {
+    background: green;
+}
+
+figcaption {
+    font-size: 40px;
+}
+
+button {
+    margin: 20px;
+}

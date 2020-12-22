@@ -1,0 +1,51 @@
+<div class="outer">
+    <div class="middle">
+        <div class="inner">
+            I am in the innermost div!
+        </div>
+    </div>
+</div>
+
+<script>
+    // Target //
+    // const outerDiv = document.querySelector(".outer");
+    // outerDiv.addEventListener("click", function (e) {
+    //     console.log(e.target); // the inner div
+    //     console.log(e.currentTarget); // the outer div
+    // });
+
+    // Alert comes in inner, middle, outer order //
+    // const outerDiv = document.querySelector(".outer");
+    // outerDiv.addEventListener("click", function (e) {
+    //     alert("outer");
+    // });
+
+    // const middleDiv = document.querySelector(".middle");
+    // middleDiv.addEventListener("click", function (e) {
+    //     alert("middle");
+    // });
+
+    // const innerDiv = document.querySelector(".inner");
+    // innerDiv.addEventListener("click", function (e) {
+    //     alert("inner");
+    // });
+
+    // Stopping propagation //
+    // It will stop after middle. 
+    const outerDiv = document.querySelector(".outer");
+    outerDiv.addEventListener("click", function (e) {
+        alert("outer");
+    });
+
+    const middleDiv = document.querySelector(".middle");
+    middleDiv.addEventListener("click", function (e) {
+        alert("middle");
+        e.stopPropagation();
+    });
+
+    const innerDiv = document.querySelector(".inner");
+    innerDiv.addEventListener("click", function (e) {
+        alert("inner");
+    });
+
+</script>
