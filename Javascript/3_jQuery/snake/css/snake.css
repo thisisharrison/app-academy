@@ -1,0 +1,83 @@
+html, body, figure, figcaption, ol, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
+}
+
+/* .grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.snake:after {
+    background: green;
+    content: 'S';
+} */
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 60px;
+    margin: 30px;
+}
+
+figure {
+    /* Using inline display */
+    /* display: inline-block; */
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.board {
+    border: 10px solid black;
+    background: #B1BC00;
+}
+
+ul {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    list-style: none;
+}
+
+/* Using inline display: */
+ul:after {
+   clear: both;
+   content: "";
+   display: block; 
+}
+
+li {
+    /* Using inline display: */
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+
+.snake {
+    border-radius: 20%;
+    background: #6F6003;
+}
+
+.apple {
+    border-radius: 50%;
+    background: red;
+}
+
+.game-over {
+    background: black;
+}
+
+figcaption {
+    font-size: 30px;
+    margin: 30px;
+}

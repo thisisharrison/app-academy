@@ -35,5 +35,11 @@ The a/A course is split into a few major sections: Ruby, SQL, Rails, JavaScript 
 * [Rails Lite](https://github.com/thisisharrison/app-academy/tree/master/Rails/6_Rails_Lite/RailsLite)
 
 ### JavaScript
+* [Fundamentals](https://github.com/thisisharrison/app-academy/tree/master/Javascript/0_Javascript_Fundamentals)
+* [Event Loop](https://github.com/thisisharrison/app-academy/tree/master/Javascript/1_Event_Loop)
+* [Object Oriented JavaScript](https://github.com/thisisharrison/app-academy/tree/master/Javascript/2_Object_oriented_javascript)
+* [jQuery](https://github.com/thisisharrison/app-academy/tree/master/Javascript/3_jQuery)
+* [AJAX](https://github.com/thisisharrison/app-academy/tree/master/Javascript/4_AJAX)
+* [DOM API](https://github.com/thisisharrison/app-academy/tree/master/Javascript/5_Javascript_DOM_API)
 
 ### React
