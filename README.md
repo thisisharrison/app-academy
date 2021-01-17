@@ -2,7 +2,7 @@
 Coursework for [App Academy](https://www.appacademy.io/immersive/curriculum?location=san-francisco), taken via a/A Open which is a Remote/Part-time course.
 
 ## Course Work (links to my homework and projects from each section)
-The a/A course is split into a few major sections: Ruby, SQL, Rails, JavaScript and React.
+The a/A course is split into a few major sections: Ruby, SQL, Rails, JavaScript, React and MERN.
 
 ### Pre-Work
 * [Software Engineering Foundations](https://github.com/thisisharrison/app-academy/tree/master/Software%20Engineering%20Foundations)
@@ -43,3 +43,9 @@ The a/A course is split into a few major sections: Ruby, SQL, Rails, JavaScript 
 * [DOM API](https://github.com/thisisharrison/app-academy/tree/master/Javascript/5_Javascript_DOM_API)
 
 ### React
+* [Redux Lite](https://github.com/thisisharrison/app-academy/tree/master/React/1_React_Fundamentals/redux-lite)
+* [React Minesweeper](https://github.com/thisisharrison/app-academy/tree/master/React/1_React_Fundamentals/react-minesweeper)
+* [Todo App](https://github.com/thisisharrison/Todo-app)
+* [Twitter Clone](https://github.com/thisisharrison/app-academy/tree/master/React/6_Frontend_Auth/BlueBird)
+* [Pokedex](https://github.com/thisisharrison/pokedex)
+* [Airbnb Clone](https://github.com/thisisharrison/benchBnb)
