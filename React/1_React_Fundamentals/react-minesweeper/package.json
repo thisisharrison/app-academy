@@ -1,0 +1,25 @@
+{
+  "name": "react-minesweeper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "minesweeper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.1",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^17.0.1",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0",
+    "wepack": "0.0.1"
+  }
+}

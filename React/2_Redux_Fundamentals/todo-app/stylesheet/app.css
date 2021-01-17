@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap; 
+    /* justify-content: center; */
+}
+
+input, button, textarea {
+    margin-left: 10px;
+}
+
+/* TODO */
