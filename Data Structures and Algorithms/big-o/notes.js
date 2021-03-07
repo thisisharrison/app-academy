@@ -17,10 +17,11 @@ function logarithmic(n) {
   if (n <= 1) return ;
   logarithmic(n / 2);
 }
+// time execution is proportional to the log of the input size
 // recursion: halving input each call
 // eg. 8 => 4 => 2 => 1
 // 2^3 = 8, log(8) = 3 => O(log(n))
-// we don't have to touch every element of the input ("ignore" the other half)
+// we don't have to touch every element of the input (discarding chunks of the input)
 // everytime we double our input, we increase 1 step
 
 // Linear O(n)
@@ -74,8 +75,10 @@ function quadratic(n) {
     }
   }
 }
+// grows directly proportional to the square of the size of the input
 
 // exponential O(2^n)
+// growth rate doubles with each addition to input n
 function exponential_2n(n) {
   if (n === 1) return;
   exponential_2n(n - 1)
