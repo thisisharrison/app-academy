@@ -2,7 +2,7 @@
 Coursework for [App Academy](https://www.appacademy.io/immersive/curriculum?location=san-francisco), taken via a/A Open which is a Remote/Part-time course.
 
 ## Course Work (links to my homework and projects from each section)
-The a/A course is split into a few major sections: Ruby, SQL, Rails, JavaScript, React and [MERN](https://github.com/thisisharrison/Twitter-clone).
+The a/A course is split into a few major sections: Ruby, SQL, Rails, JavaScript, React, [MERN](https://github.com/thisisharrison/Twitter-clone), and Data Structures and Algorithms.
 
 ### Pre-Work
 * [Software Engineering Foundations](https://github.com/thisisharrison/app-academy/tree/master/Software%20Engineering%20Foundations)
@@ -52,3 +52,6 @@ The a/A course is split into a few major sections: Ruby, SQL, Rails, JavaScript,
 
 ### MERN
 * [Twitter Clone](https://github.com/thisisharrison/Twitter-clone)
+
+### Data Structures and Algorithms
+* [Practice Problems](https://github.com/thisisharrison/app-academy/tree/master/Data%20Structures%20and%20Algorithms)
