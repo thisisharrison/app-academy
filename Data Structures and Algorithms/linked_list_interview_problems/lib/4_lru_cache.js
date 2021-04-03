@@ -58,41 +58,72 @@
 // TODO: Implement the LRUCacheItem class here
 class LRUCacheItem {
   constructor(val = null, key = null) {
-
+    this.val = val
+    this.key = key
+    this.node = null
   }
 }
 
 // TODO: Implement the LRUCacheItem class here
 class LRUCache {
   constructor(limit) {
-
+    // hash to store the key
+    this.items = {}
+    this.ordering = new List ()
+    this.limit = limit
+    this.length = 0
   }
 
   // TODO: Implement the size method here
   size() {
-
+    return this.length
   }
 
   // TODO: Implement the get method here
   get(key) {
-
+    if (!this.items[key]) return null
+    let item = this.items[key]
+    // it is used, move to front
+    this.promote(item)
+    return item.val
   }
 
   // TODO: Implement the set method here
   set(key, val) {
-
+    let item
+    if (key in this.items) {
+      item = this.items[key]
+      // modify the item
+      item.val = val
+      // promote it as it was used
+      this.promote(item)
+    } else {
+      // set new item
+      // remove oldest if full
+      if (this.isFull()) this.prune()
+      item = new LRUCacheItem (val, key)
+      // it's node is the head of the linked list
+      item.node = this.ordering.unshift(item)
+      // set key in hash
+      this.items[key] = item
+      this.length += 1
+    }
   }
 
   isFull() {
-    
+    return this.length >= this.limit
   }
 
+  // remove the oldest
   prune() {
-
+    // delete the end of list
+    const oldest = this.ordering.pop()
+    delete this.items[oldest.key]
+    this.length = Math.max(0, this.length - 1)
   }
 
   promote(item) {
-
+    this.ordering.moveToFront(item.node);
   }
 }
 
